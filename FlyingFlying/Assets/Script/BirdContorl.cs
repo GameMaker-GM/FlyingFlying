@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class BirdContorl : MonoBehaviour
 {
+    ButtonControl startbutton = GameObject.Find("StartButton").GetComponent<ButtonControl>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +16,13 @@ public class BirdContorl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (startbutton.gamestart == true)
+        {
+            Rigidbody gameObjectsRigidBody = gameObject.AddComponent<Rigidbody>();
+            gameObjectsRigidBody.mass = 1;
+        }
+
+            if (Input.GetMouseButtonDown(0))
         {
             //적용되어 있는 vector값 초기화
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);

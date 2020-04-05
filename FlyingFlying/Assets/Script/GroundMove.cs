@@ -6,6 +6,8 @@ public class GroundMove : MonoBehaviour
 {
 
     public GameObject[] grounds;
+    ButtonControl startbutton = GameObject.Find("StartButton").GetComponent<ButtonControl>();
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +18,7 @@ public class GroundMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.timeScale == 0)
+        if(Time.timeScale == 0 || startbutton.gamestart == false)
         {
             return;
         }

@@ -10,6 +10,7 @@ public class PillarMaker : MonoBehaviour
     private float nowTime;
     private float makeTime = 2f;
 
+
     // Start is called before the first frame update
     void Start()
     {
